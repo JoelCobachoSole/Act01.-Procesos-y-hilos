@@ -17,6 +17,13 @@ public class cFilPrincipal {
     //alternativa: vObjecteFil
     vFil . start ();
 
+    // AÑADIDO 1.3: el proceso principal espera al proceso hijo
+    try {
+      vFil.join();
+    } catch (InterruptedException pExcepcio) {
+      System.out.println("Interrompent execució procés principal");
+    }
+
     System . out . println ("Iniciant execució procés principal");
 
     try {
